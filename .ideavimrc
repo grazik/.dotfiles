@@ -1,0 +1,21 @@
+
+set number         " display line numbers on the left
+set colorcolumn=120 " highlight column #80
+set cursorline     " Highlight current line
+set noshowmode     " don't display current mode (Insert, Visual, Replace) in
+                   " the status line. This information is already shown in the
+                   " Airline status bar
+set rnu
+
+set ignorecase " ignore case when using a search pattern
+set smartcase  " override 'ignorecase' if pattern has upper case characters
+
+nnoremap <silent> <C-f> :Files<CR>
+
+nmap <leader>ev :e ~/.ideavimrc<CR>
+nmap <leader>sv :so ~/.ideavimrc<CR>
+
+map <leader>to :action CloseAllEditorsButActive<cr>
+map <leader>y :action CopyPaths<cr>
+
+map <leader>c :action CommentByLineComment<cr>
