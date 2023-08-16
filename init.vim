@@ -6,6 +6,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug '/usr/local/opt/fzf'
     Plug 'preservim/nerdtree'
     Plug 'junegunn/fzf.vim'
+    Plug 'Valloric/YouCompleteMe'
     Plug 'eslint/eslint'
 call plug#end()
 
@@ -14,14 +15,10 @@ set nocompatible               " be improved, required
 filetype off                   " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin()            " required
 
-Plugin 'VundleVim/Vundle.vim'  " required
-Plugin 'Valloric/YouCompleteMe'
-
-call vundle#end()               " required
 filetype plugin indent on       " required
 
+set t_Co=256
 set number         " display line numbers on the left
 set colorcolumn=120 " highlight column #80
 set cursorline     " Highlight current line
