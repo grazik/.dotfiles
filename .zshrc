@@ -68,7 +68,7 @@ ZSH_THEME="spaceship-prompt/spaceship"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git k fd fzf asdf zsh-syntax-highlighting )
+plugins=(git k fzf zsh-syntax-highlighting )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -122,12 +122,10 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-# ASDF
- . $HOME/.asdf/asdf.sh
-#. ~/.asdf/plugins/java/set-java-home.zsh
-
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 
-# JAVA
-export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH="/opt/homebrew/bin:$PATH"
+[[ -s "~/.sdkman/bin/sdkman-init.sh" ]] && source "~/.sdkman/bin/sdkman-init.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
